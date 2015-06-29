@@ -14,6 +14,7 @@ prep: steam_username steam_password steam_guard_code steam_dir mysql builddocker
 
 mysql:
 	docker run --name dokker-mysql \
+	--cidfile="mysql" \
 	-e MYSQL_ROOT_PASSWORD=`cat steam_password` \
 	-d mysql:latest
 
@@ -39,6 +40,7 @@ prepdocker:
 	-p 27005:27005/udp \
 	-p 27015:27015/udp \
 	-p 27020:27020/udp \
+	--link dokker-mysql \
 	--env STEAM_USERNAME=`cat steam_username` \
 	--env STEAM_PASSWORD=`cat steam_password` \
 	-v /var/run/docker.sock:/run/docker.sock \
