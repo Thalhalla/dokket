@@ -31,4 +31,3 @@ ADD ./default /etc/nginx/sites-available/default
 EXPOSE 80
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-CMD service php5-fpm start && nginx
