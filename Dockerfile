@@ -30,7 +30,21 @@ ADD nginx.conf /etc/nginx/nginx.conf
 ADD sshd_config /etc/ssh/sshd_config
 RUN chmod 644 /etc/ssh/sshd_config; mkdir /var/run/sshd
 
+USER steam
+WORKDIR /home/steam
+RUN wget http://gameservermanagers.com/dl/tf2server
+RUN chmod +x tf2server
+# Create the directories used to store the profile files and Arma3.cfg file
+RUN mkdir -p "~/.local/share/Arma 3"
+RUN mkdir -p "~/.local/share/Arma 3 - Other Profiles"
+# RUN rm -Rf /home/steam/steamcmd
+RUN wget http://gameservermanagers.com/dl/arma3server
+RUN chmod +x arma3server
+# install wasteland
+WORKDIR /home/steam/steamcmd/arma3
+RUN curl -SsL -o mpmissions/A3Wasteland_v1.0b.Altis.pbo https://github.com/crosbymichael/Release_Files/raw/master/A3Wasteland_v1.0b.Altis.pbo
 
+USEr root
 # ADD . /srv/www
 ADD ./default /etc/nginx/sites-available/default
 
