@@ -8,4 +8,5 @@
 #sed -i "s/steampass=REPLACE_PASSWORD/steampass='$STEAM_PASSWORD'/" arma3server
 # set_steam_guard_code $STEAM_GUARD_CODE
 #yes y|./tf2server install
+/usr/sbin/sshd
 bash /run.sh
