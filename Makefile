@@ -22,7 +22,9 @@ rundocker:
 	@docker run --name=`cat NAME` \
 	--cidfile="cid" \
 	-v /tmp:/tmp \
+	-d \
 	-v `cat steam_dir`:/home/steam \
+	-p 44180:80 \
 	-p 27005:27005/udp \
 	-p 27015:27015/udp \
 	-p 27020:27020/udp \
@@ -37,6 +39,8 @@ prepdocker:
 	@docker run --name=`cat NAME` \
 	--cidfile="cid" \
 	-v /tmp:/tmp \
+	-d \
+	-p 44180:80 \
 	-p 27005:27005/udp \
 	-p 27015:27015/udp \
 	-p 27020:27020/udp \
