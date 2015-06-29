@@ -21,6 +21,7 @@ RUN apt-get update; apt-get -y install php5-fpm php5-mysql php-apc php5-imagick 
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ && mv /usr/bin/composer.phar /usr/bin/composer
 # RUN echo "<?php phpinfo(); ?>" > /srv/www/phpinfo.php
+RUN apt-get -y install git
 RUN cd /srv; rm -Rf www; git clone https://github.com/aaroniker/rokket.git www
 WORKDIR /srv/www
 
