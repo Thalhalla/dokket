@@ -1,4 +1,7 @@
 cid
+mysql
 steam_password
 steam_username
 steam_guard_code
+steam_dir
+www_dir

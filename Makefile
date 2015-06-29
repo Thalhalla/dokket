@@ -24,6 +24,7 @@ rundocker:
 	-v /tmp:/tmp \
 	-d \
 	-v `cat steam_dir`:/home/steam \
+	-v `cat www_dir`:/srv/www \
 	-p 44180:80 \
 	-p 27005:27005/udp \
 	-p 27015:27015/udp \
@@ -100,4 +101,9 @@ steam_password:
 steam_dir:
 	@while [ -z "$$STEAM_DIR" ]; do \
 		read -r -p "Enter the steam dir you wish to associate with this container [STEAM_DIR]: " STEAM_DIR; echo "$$STEAM_DIR">>steam_dir; cat steam_dir; \
+	done ;
+
+www_dir:
+	@while [ -z "$$WWW_DIR" ]; do \
+		read -r -p "Enter the www dir you wish to associate with this container [WWW_DIR]: " WWW_DIR; echo "$$WWW_DIR">>www_dir; cat www_dir; \
 	done ;
