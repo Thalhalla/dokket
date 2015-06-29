@@ -40,7 +40,7 @@ prepdocker:
 	-p 27005:27005/udp \
 	-p 27015:27015/udp \
 	-p 27020:27020/udp \
-	--link dokker-mysql \
+	--link dokker-mysql:mysql \
 	--env STEAM_USERNAME=`cat steam_username` \
 	--env STEAM_PASSWORD=`cat steam_password` \
 	-v /var/run/docker.sock:/run/docker.sock \
