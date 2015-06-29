@@ -26,8 +26,11 @@ rundocker:
 	-v `cat steam_dir`:/home/steam \
 	-v `cat www_dir`:/srv/www \
 	-p 44180:80 \
+	-p 27005:27005 \
 	-p 27005:27005/udp \
+	-p 27015:27015 \
 	-p 27015:27015/udp \
+	-p 27020:27020 \
 	-p 27020:27020/udp \
 	-p 2302:2302/udp \
 	-p 2303:2303/udp \
