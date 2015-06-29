@@ -35,7 +35,7 @@ rundocker:
 	-p 2305:2305/udp \
 	-p 2344:2344 \
 	-p 2344:2344/udp \
-	-p 2345 2345 \
+	-p 2345:2345 \
 	--link dokker-mysql:mysql \
 	--env STEAM_USERNAME=`cat steam_username` \
 	--env STEAM_PASSWORD=`cat steam_password` \
