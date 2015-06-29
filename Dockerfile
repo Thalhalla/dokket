@@ -24,8 +24,12 @@ RUN chmod 755 /start.sh
 # RUN echo "<?php phpinfo(); ?>" > /srv/www/phpinfo.php
 RUN cd /srv; rm -Rf www; git clone https://github.com/aaroniker/rokket.git www
 WORKDIR /srv/www
+RUN chown -R www-data. /srv/www
 RUN echo "HTML is working" > /srv/www/nginx-container.html
 ADD nginx.conf /etc/nginx/nginx.conf
+ADD sshd_config /etc/ssh/sshd_config
+RUN chmod 644 /etc/ssh/sshd_config
+
 
 # ADD . /srv/www
 ADD ./default /etc/nginx/sites-available/default
