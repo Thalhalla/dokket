@@ -8,6 +8,9 @@ ufw allow 2344/tcp
 ufw allow 2345/udp
 ufw allow 2345/tcp
 ufw allow 27005/udp
+ufw allow 27005/tcp
+ufw allow 27015/tcp
 ufw allow 27015/udp
+ufw allow 27020/tcp
 ufw allow 27020/udp
 ufw allow 44180/tcp
