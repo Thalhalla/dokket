@@ -18,7 +18,7 @@ mysql-builder:
 	docker run --name dokker-mysql \
 	--cidfile="mysql" \
 	-e MYSQL_ROOT_PASSWORD=`cat steam_password` \
-	-v `cat mysql_dir`:/var/lib/mysql
+	-v `cat mysql_dir`:/var/lib/mysql \
 	-d mysql:latest
 
 rundocker:
