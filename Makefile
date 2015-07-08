@@ -72,6 +72,9 @@ beep:
 kill:
 	@docker kill `cat cid`
 
+killmysql:
+	@docker kill `cat mysql`
+
 rm-steamer:
 	rm  steamer.txt
 
@@ -79,11 +82,17 @@ rm-image:
 	@docker rm `cat cid`
 	@rm cid
 
+rmmysql-image:
+	@docker rm `cat mysql`
+	@rm mysql
+
 cleanfiles:
 	rm steam_username
 	rm steam_password
 
 rm: kill rm-image
+
+rmmysql: killmysql rmmysql-image
 
 clean: cleanfiles rm
 
