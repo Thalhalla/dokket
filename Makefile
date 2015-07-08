@@ -90,6 +90,8 @@ cleanfiles:
 	rm steam_username
 	rm steam_password
 
+rmall: rm rmmysql
+
 rm: kill rm-image
 
 rmmysql: killmysql rmmysql-image
