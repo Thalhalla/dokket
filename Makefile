@@ -8,7 +8,7 @@ help:
 
 build: builddocker beep
 
-run: steam_username steam_password steam_guard_code steam_dir builddocker rundocker beep
+run: steam_username steam_password steam_guard_code steam_dir mysql builddocker rundocker beep
 
 prep: steam_username steam_password steam_guard_code steam_dir mysql builddocker prepdocker beep
 
