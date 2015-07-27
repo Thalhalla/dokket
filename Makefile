@@ -26,6 +26,7 @@ rundocker:
 	--cidfile="cid" \
 	-v /tmp:/tmp \
 	-d \
+	-i \
 	-v `cat steam_dir`:/home/steam \
 	-v `cat www_dir`:/srv/www \
 	-p 44180:80 \
